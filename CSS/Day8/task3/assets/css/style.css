@@ -1,0 +1,33 @@
+body{
+    background-color: rgba(145, 146, 148, 0.774);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+}
+h2{
+    text-align: center;
+}
+ul{
+    width: 200px;
+    height: 200px;
+    margin: 0%;
+    padding: 150px;
+}
+li{
+
+    list-style-type: none;
+    padding: 20px;
+    margin: 15px ;
+    background-color: gray;
+    border: 1px solid black;
+}
+li:first-child {
+    background-color: lightgreen;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+li:last-child {
+    background-color: lightcoral;
+    color: white;
+    font-weight: bold;
+}

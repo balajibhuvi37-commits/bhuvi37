@@ -1,0 +1,38 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+body{
+    margin: 0%;
+    padding: 20px;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.gallery{
+    padding: 20px;
+     display: flex;
+     height:400px;
+     gap: 40px;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+h2{
+    text-align: start;
+
+}
+
+.box :hover{
+    background-color: darkgreen;
+    color: white;
+    transform: scale(1.2);
+}

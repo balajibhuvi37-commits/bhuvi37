@@ -1,0 +1,30 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+      background-color: #f2f2f2;
+}
+.card{
+    width: 150px;
+    height: 200px;
+    padding: 15px;
+    margin: 10px;
+    border: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+}
+h3{
+    margin-bottom: 15px;
+}
+
+
+

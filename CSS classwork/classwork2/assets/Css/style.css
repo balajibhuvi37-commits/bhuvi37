@@ -1,0 +1,51 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{ 
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+body{ 
+    background-color: blue;
+    color: azure;
+    text-align: center;
+    font font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.class{
+    background-color: burlywood;
+    color: beige;
+    width: 350px;
+    height: 150px;
+    text-align: center;
+}
+
+#id{background-color: burlywood;
+    color: beige;
+    width: 350px;
+    height: 150px;
+    text-align: center;
+}
+
+h2{
+ margin-bottom: 15px;
+}
+
+p{
+    margin: 15px;
+}
+

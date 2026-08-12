@@ -1,0 +1,25 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+.parent{
+    position: relative;
+    width: 100px;
+
+}
+.img{
+    width: 80px;
+}
+BADG{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 50px;
+    padding: 5px;
+}

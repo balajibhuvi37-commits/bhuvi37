@@ -1,0 +1,30 @@
+body{
+    margin: 40px;
+}
+
+.box{
+    width: 150px;
+    height: 150px;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box1{
+    background-color: red;
+}
+
+.box2{
+    background-color: blue;
+    position: relative;
+    top: 40px;
+    left: 60px;
+}
+
+.box3{
+    background-color: green;
+     
+}

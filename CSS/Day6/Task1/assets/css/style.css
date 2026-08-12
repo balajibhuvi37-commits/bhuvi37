@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightblue;
+    font-family: 'Times New Roman', Times, serif;
+}
+header{
+    background-color: rgb(152, 152, 221);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+main{
+    padding: 20px;
+    line-height: 1.8;
+}
+.main{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: beige;
+    color: black;
+    padding: 15px 20px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+}

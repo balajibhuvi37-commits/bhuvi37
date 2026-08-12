@@ -1,0 +1,61 @@
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    text-align: center;
+
+}
+.child h2{
+     margin-bottom:  20px;
+
+
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.child{
+    width: 200px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+    transition: 0.4s;
+
+}
+.child img{
+    width: 100px;
+    border-radius: 10px;
+}
+.child p{
+    color: green;
+    font-size: 18px;
+    margin-bottom: 15px;
+
+}
+
+button {
+       background-color: rgb(8, 8, 90);
+       color: white;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+       transform: translateY(-10px);
+}
+button :hover{
+    background-color: darkblue;
+}

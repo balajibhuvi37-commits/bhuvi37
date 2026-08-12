@@ -1,0 +1,22 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: lightblue;
+    
+     
+    
+}
+.card :hover{
+      background-color: red;
+      color: white;
+}

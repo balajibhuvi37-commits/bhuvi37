@@ -1,0 +1,76 @@
+/* Universal Selector */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* Element Selector */
+body{
+    background:#f4f4f4;
+}
+
+/* ID Selector */
+#logo{
+    color:white;
+}
+
+/* Header */
+header{
+    background:#333;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+}
+
+/* Class Selector */
+.menu{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+/* Descendant Selector */
+.menu li a{
+    text-decoration:none;
+    color:white;
+}
+
+/* Group Selector */
+h2,p{
+    margin:10px 0;
+}
+
+/* Class Selector */
+.section{
+    padding:40px;
+    text-align:center;
+}
+
+/* Flexbox */
+.box-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* Child Selector */
+.box-container > .box{
+    width:180px;
+    padding:30px;
+    background:white;
+    border:2px solid black;
+    border-radius:10px;
+}
+
+footer{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:20px;
+}

@@ -1,0 +1,21 @@
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightgrey;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+h2 ::after{
+    content: " ✔";
+    color: blue;
+
+}
+h2::before{
+    content: " ✔" ;
+    color: gold;
+}

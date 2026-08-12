@@ -1,0 +1,53 @@
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f2f2f2;
+}
+
+.container{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.logo{
+    width:120px;
+    height:120px;
+    border-radius:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition: transform 1s;
+}
+
+.logo:hover{
+    transform: rotate(360deg);
+}
+
+.google{
+    background:#4285F4;
+}
+
+.microsoft{
+    background:#00A4EF;
+}
+
+.apple{
+    background:#555;
+}
+
+.amazon{
+    background:#FF9900;
+}
+
+.tesla{
+    background:#E82127;
+}
+

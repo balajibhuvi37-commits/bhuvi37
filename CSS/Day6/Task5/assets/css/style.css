@@ -1,0 +1,66 @@
+body{
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.box{
+    width: 180px;
+    height: 60px;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    margin: 20px;
+    font-weight: bold;
+}
+
+/* Static */
+.static{
+    background-color: blue;
+    position: static;
+}
+
+/* Relative */
+.relative{
+    background-color: green;
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+/* Parent for Absolute */
+.parent{
+    position: relative;
+    width: 300px;
+    height: 150px;
+    border: 2px solid black;
+    margin-top: 50px;
+}
+
+/* Absolute */
+.absolute{
+    background-color: red;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Fixed */
+.fixed{
+    background-color: purple;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Sticky */
+.sticky{
+    background-color: orange;
+    position: sticky;
+    top: 0;
+}
+
+/* Content for scrolling */
+.content{
+    height: 1200px;
+    margin-top: 50px;
+}

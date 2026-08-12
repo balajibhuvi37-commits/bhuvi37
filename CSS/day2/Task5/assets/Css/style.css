@@ -1,0 +1,30 @@
+/* Element Selector */
+body {
+    background-color: lightblue;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: darkblue;
+}
+
+/* Class Selector */
+.section {
+    background-color: white;
+    width: 350px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+/* ID Selector */
+#hospital-name {
+    background-color: darkblue;
+    color: white;
+    width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+}

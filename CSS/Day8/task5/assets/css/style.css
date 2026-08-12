@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+
+p::first-letter {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(245, 16, 16);
+}
+
+p::first-line {
+    color: blue;
+    font-weight: bold;
+}
+
+
+p::selection {
+    background-color: rgb(207, 18, 106);
+    color: black;
+}
