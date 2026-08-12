@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Admission Form</title>
+</head>
+<body>
+
+    <h1>Engineering College Admission </h1>
+
+    <form>
+
+        <label>Student Name:</label><br>
+        <input type="text" name="studentname"><br><br>
+
+        <label>Father Name:</label><br>
+        <input type="text" name="fathername"><br><br>
+
+        <label>Mother Name:</label><br>
+        <input type="text" name="mothername"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email"><br><br>
+
+        <label>Phone:</label><br>
+        <input type="tel" name="phone"><br><br>
+
+        <label>Date of Birth:</label><br>
+        <input type="date" name="dob"><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Other
+        <br><br>
+
+        <label>Department:</label><br>
+        <select name="department">
+            <option>Computer Science Engineering</option>
+            <option>Information Technology</option>
+            <option>Electronics and Communication</option>
+            <option>Electrical and Electronics</option>
+            <option>Mechanical Engineering</option>
+            <option>Civil Engineering</option>
+        </select><br><br>
+
+        <label>Percentage:</label><br>
+        <input type="number" name="percentage"><br><br>
+
+        <label>Address:</label><br>
+        <textarea name="address" rows="4" cols="30"></textarea><br><br>
+
+        <label>Passport Size Photo:</label><br>
+        <input type="file" name="photo"><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+
+    <hr>
+
+    <h2>Admission Details</h2>
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Application ID</th>
+                <th>Student Name</th>
+                <th>Department</th>
+                <th>Percentage</th>
+                <th>Email</th>
+                <th>Admission Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>APP101</td>
+                <td>Rahul Kumar</td>
+                <td>Computer Science Engineering</td>
+                <td>92%</td>
+                <td>rahul@gmail.com</td>
+                <td>Approved</td>
+            </tr>
+
+            <tr>
+                <td>APP102</td>
+                <td>Priya Sharma</td>
+                <td>Information Technology</td>
+                <td>89%</td>
+                <td>priya@gmail.com</td>
+                <td>Pending</td>
+            </tr>
+
+            <tr>
+                <td>APP103</td>
+                <td>Arun Kumar</td>
+                <td>Mechanical Engineering</td>
+                <td>85%</td>
+                <td>arun@gmail.com</td>
+                <td>Approved</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</body>
+</html>

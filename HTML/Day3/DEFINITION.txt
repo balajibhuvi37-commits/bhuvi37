@@ -1,0 +1,23 @@
+1. Block-Level Elements
+
+	Block-level elements start on a new line and take up the full width available in their parent container by default. They are mainly used to structure the layout of a webpage.
+
+	<div>, <p>, <h1>–<h6>, <section>, <article>, <header>, <footer>, <main>, <nav>, <aside>, <ul>, <ol>, <table>, <form>
+
+2. Inline Elements
+
+	Inline elements do not start on a new line. They occupy only the space needed for their content and are commonly used to format or display content within block-level elements.
+
+	<span>, <a>, <img>, <strong>, <em>, <code>, <small>, <sub>, <sup>, <br>
+
+3. Formatting Elements
+
+	Formatting elements are HTML tags used to change the appearance or emphasize the meaning of text without affecting the overall page structure.
+
+	<b>, <strong>, <i>, <em>, <mark>, <u>, <small>, <del>, <ins>, <sub>, <sup>, <code>, <pre>
+
+4. Interactive Elements
+
+	Interactive elements are HTML tags that allow users to interact with a webpage by entering data, clicking buttons or links, selecting options, playing media, or expanding content.
+
+       <a>, <button>, <input>, <textarea>, <select>, <option>, <label>, <form>, <details>, <summary>, <dialog>, <audio>, <video>

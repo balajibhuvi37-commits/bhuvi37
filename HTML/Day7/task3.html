@@ -1,0 +1,124 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apollo Hospital Patient Registration</title>
+</head>
+<body>
+
+    <h1>Apollo Hospital</h1>
+    <h2>Patient Registration Form</h2>
+
+    <form>
+
+        <label>Patient ID:</label><br>
+        <input type="text" name="patientid"><br><br>
+
+        <label>Patient Name:</label><br>
+        <input type="text" name="patientname"><br><br>
+
+        <label>Age:</label><br>
+        <input type="number" name="age"><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Other
+        <br><br>
+
+        <label>Blood Group:</label><br>
+        <select name="bloodgroup">
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+        <br><br>
+
+        <label>Doctor:</label><br>
+        <select name="doctor">
+            <option>Dr. Rajesh</option>
+            <option>Dr. Priya</option>
+            <option>Dr. Kumar</option>
+            <option>Dr. Anitha</option>
+        </select>
+        <br><br>
+
+        <label>Appointment Date:</label><br>
+        <input type="date" name="appointment"><br><br>
+
+        <label>Symptoms:</label><br>
+        <textarea name="symptoms" rows="4" cols="30"></textarea><br><br>
+
+        <label>Medical Report Upload:</label><br>
+        <input type="file" name="report"><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+
+    <hr>
+
+    <h2>Patient Details</h2>
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Patient Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Blood Group</th>
+                <th>Doctor</th>
+                <th>Appointment Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>P101</td>
+                <td>Ravi Kumar</td>
+                <td>30</td>
+                <td>Male</td>
+                <td>B+</td>
+                <td>Dr. Rajesh</td>
+                <td>22-07-2026</td>
+                <td>Confirmed</td>
+            </tr>
+
+            <tr>
+                <td>P102</td>
+                <td>Priya</td>
+                <td>25</td>
+                <td>Female</td>
+                <td>O+</td>
+                <td>Dr. Priya</td>
+                <td>23-07-2026</td>
+                <td>Pending</td>
+            </tr>
+
+            <tr>
+                <td>P103</td>
+                <td>Arun</td>
+                <td>40</td>
+                <td>Male</td>
+                <td>A+</td>
+                <td>Dr. Kumar</td>
+                <td>24-07-2026</td>
+                <td>Confirmed</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
