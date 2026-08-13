@@ -3,19 +3,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY TASKS</title>
+    <title>Web Development Topics</title>
+
+    <style>
+       
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        padding: 50px 30px;
+        background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #164e63);
+        background-size: 400% 400%;
+        animation: backgroundMove 12s ease infinite;
+        overflow-x: hidden;
+    }
+
+    @keyframes backgroundMove {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1250px;
+        margin: auto;
+    }
+
+    .title {
+        text-align: center;
+        margin-bottom: 50px;
+        animation: titleDown 1s ease;
+    }
+
+    @keyframes titleDown {
+        from {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .title h1 {
+        color: white;
+        font-size: 48px;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+                     0 0 25px rgba(96, 165, 250, 0.5);
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        }
+
+        to {
+            text-shadow: 0 0 25px rgba(96, 165, 250, 0.9),
+                         0 0 45px rgba(129, 140, 248, 0.7);
+        }
+    }
+
+    .title p {
+        color: #dbeafe;
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .topics {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .topic {
+        position: relative;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 28px;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+        animation: cardAppear 0.8s ease both;
+        transition: 0.5s ease;
+    }
+
+    .topic:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .topic:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .topic:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .topic:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+    .topic:nth-child(5) {
+        animation-delay: 0.5s;
+    }
+
+    .topic:nth-child(6) {
+        animation-delay: 0.6s;
+    }
+
+    .topic:nth-child(7) {
+        animation-delay: 0.7s;
+    }
+
+    @keyframes cardAppear {
+        from {
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .topic::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 5px;
+        transition: 0.6s;
+    }
+
+    .topic:hover::before {
+        left: 0;
+    }
+
+    .topic:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .topic h2 {
+        text-align: center;
+        padding: 16px;
+        margin-bottom: 25px;
+        border-radius: 14px;
+        font-size: 25px;
+        letter-spacing: 1px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .topic h2::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.5),
+            transparent
+        );
+        transform: skewX(-25deg);
+        transition: 0.6s;
+    }
+
+    .topic:hover h2::after {
+        left: 130%;
+    }
+
+    .links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .links a {
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        text-align: center;
+        padding: 14px 10px;
+        border-radius: 10px;
+        background: #f1f5f9;
+        color: #1e293b;
+        font-size: 15px;
+        font-weight: bold;
+        border: 2px solid transparent;
+        transition: 0.4s ease;
+        z-index: 1;
+    }
+
+    .links a::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition: 0.5s ease;
+        z-index: -1;
+    }
+
+    .links a:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .links a:hover {
+        color: white;
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .html::before {
+        background: #e44d26;
+    }
+
+    .html h2 {
+        background: linear-gradient(135deg, #e44d26, #ff7043);
+    }
+
+    .html .links a::before {
+        background: #e44d26;
+    }
+
+    .css::before {
+        background: #1572b6;
+    }
+
+    .css h2 {
+        background: linear-gradient(135deg, #1572b6, #38bdf8);
+    }
+
+    .css .links a::before {
+        background: #1572b6;
+    }
+
+    .js::before {
+        background: #eab308;
+    }
+
+    .js h2 {
+        background: linear-gradient(135deg, #facc15, #eab308);
+        color: #222;
+    }
+
+    .js .links a::before {
+        background: #facc15;
+    }
+
+    .js .links a:hover {
+        color: #222;
+    }
+
+    .bootstrap::before {
+        background: #7952b3;
+    }
+
+    .bootstrap h2 {
+        background: linear-gradient(135deg, #7952b3, #a855f7);
+    }
+
+    .bootstrap .links a::before {
+        background: #7952b3;
+    }
+
+    .tailwind::before {
+        background: #06b6d4;
+    }
+
+    .tailwind h2 {
+        background: linear-gradient(135deg, #06b6d4, #22d3ee);
+    }
+
+    .tailwind .links a::before {
+        background: #06b6d4;
+    }
+
+    .react::before {
+        background: #149eca;
+    }
+
+    .react h2 {
+        background: linear-gradient(135deg, #149eca, #38bdf8);
+    }
+
+    .react .links a::before {
+        background: #149eca;
+    }
+
+    .sql::before {
+        background: #336791;
+    }
+
+    .sql h2 {
+        background: linear-gradient(135deg, #336791, #60a5fa);
+    }
+
+    .sql .links a::before {
+        background: #336791;
+    }
+</style>
+    </style>
 </head>
+
 <body>
-    <h2>THIS IS MY DESIGN </h2>
-    <div>
-        <nav>
-            <a href="HTML/Day1/index.html"> HTML  DAy 1</a>
-            <a href="HTML/Day2/company.html"> HTML DAY2</a>
-            <a href="HTML/Day3/task1.html">HTML DAY3</a>
-            <a href="HTML/Day4/wekkipedia.html">HTML DAY4</a>
-             
-        </nav>
-        
+
+    <div class="container">
+
+        <div class="title">
+            <h1>Frontend Class</h1>
+            <p>Select a topic to explore the concepts</p>
+        </div>
+
+        <div class="topics">
+
+            <div class="topic html">
+                <h2>HTML</h2>
+                <div class="links">
+                    <a href="./HTML/Day1/index.html" target="blank">Day-1</a>
+                    <a href="./HTML/Day2/index.html" target="blank">Day-2</a>
+                    <a href="HTML/Day3/index.html"   target="blank">Day-3</a>
+                    <a href="DAILY_TASKS/html/day_4_tasks/" target="blank">Day-4</a>
+                    <a href="DAILY_TASKS/html/day_5_task/" target="blank">Day-5</a>
+                    <a href="DAILY_TASKS/html/day_6_task/" target="blank">Day-6</a>
+                    <a href="DAILY_TASKS/html/day_7_task/" target="blank">Day-7</a>
+                    <a href="DAILY_TASKS/html/day_8_task/" target="blank">Day-8</a>
+                    <a href="DAILY_TASKS/html/day_9_task/" target="blank">Day-9</a>
+                </div>
+            </div>
+
+            <div class="topic css">
+                <h2>CSS</h2>
+                <div class="links">
+                    <a href="DAILY_TASKS/css/day1/"  target="blank">Day-1</a>
+                    <a href="DAILY_TASKS/css/day2/"  target="blank">Day-2</a>
+                    <a href="DAILY_TASKS/css/day3/"  target="blank">Day-3</a>
+                    <a href="DAILY_TASKS/css/day4/"  target="blank">Day-4</a>
+                    <a href="DAILY_TASKS/css/day5/"  target="blank">Day-5</a>
+                    <a href="DAILY_TASKS/css/day6/"  target="blank">Day-6</a>
+                    <a href="DAILY_TASKS/css/day7/"  target="blank">Day-7</a>
+                    <a href="DAILY_TASKS/css/day8/"  target="blank">Day-8</a>
+                    <a href="DAILY_TASKS/css/day9/"  target="blank">Day-9</a>
+                    <a href="DAILY_TASKS/css/day10/"  target="blank">Day-10</a>
+                </div>
+            </div>
+
+            <div class="topic js">
+                <h2>JavaScript</h2>
+                <div class="links">
+                    <a href="#"  target="blank">Day-1</a>
+                    <a href="#"  target="blank">Day-2</a>
+                    <a href="#"  target="blank">Day-3</a>
+                    <a href="#"  target="blank">Day-4</a>
+                    <a href="#"  target="blank">Day-5</a>
+                    <a href="#"  target="blank">Day-6</a>
+                    <a href="#"  target="blank">Day-7</a>
+                    <a href="#"  target="blank">Day-8</a>
+                    <a href="#"  target="blank">Day-9</a>
+                    <a href="#"  target="blank">Day-10</a>
+                </div>
+            </div>
+
+            <div class="topic bootstrap">
+                <h2>Bootstrap</h2>
+                <div class="links">
+                    <a href="#"  target="blank">Day-1</a>
+                    <a href="#"  target="blank">Day-2</a>
+                    <a href="#"  target="blank">Day-3</a>
+                    <a href="#"  target="blank">Day-4</a>
+                    <a href="#"  target="blank">Day-5</a>
+                    <a href="#"  target="blank">Day-6</a>
+                    <a href="#"  target="blank">Day-7</a>
+                    <a href="#"  target="blank">Day-8</a>
+                    <a href="#"  target="blank">Day-9</a>
+                    <a href="#"  target="blank">Day-10</a>
+                </div>
+            </div>
+
+            <div class="topic tailwind">
+                <h2>Tailwind CSS</h2>
+                <div class="links">
+                    <a href="#"  target="blank">Day-1</a>
+                    <a href="#"  target="blank">Day-2</a>
+                    <a href="#"  target="blank">Day-3</a>
+                    <a href="#"  target="blank">Day-4</a>
+                    <a href="#"  target="blank">Day-5</a>
+                    <a href="#">Day-6</a>
+                    <a href="#">Day-7</a>
+                    <a href="#">Day-8</a>
+                    <a href="#">Day-9</a>
+                    <a href="#">Day-10</a>
+                </div>
+            </div>
+
+            <div class="topic react">
+                <h2>React</h2>
+                <div class="links">
+                    <a href="#">Day-1</a>
+                    <a href="#">Day-2</a>
+                    <a href="#">Day-3</a>
+                    <a href="#">Day-4</a>
+                    <a href="#">Day-5</a>
+                    <a href="#">Day-6</a>
+                    <a href="#">Day-7</a>
+                    <a href="#">Day-8</a>
+                    <a href="#">Day-9</a>
+                    <a href="#">Day-10</a>
+                </div>
+            </div>
+
+            <div class="topic sql">
+                <h2>SQL</h2>
+                <div class="links">
+                    <a href="#">Day-1</a>
+                    <a href="#">Day-2</a>
+                    <a href="#">Day-3</a>
+                    <a href="#">Day-4</a>
+                    <a href="#">Day-5</a>
+                    <a href="#">Day-6</a>
+                    <a href="#">Day-7</a>
+                    <a href="#">Day-8</a>
+                    <a href="#">Day-9</a>
+                    <a href="#">Day-10</a>
+                </div>
+            </div>
+
+        </div>
     </div>
+
 </body>
 </html>
