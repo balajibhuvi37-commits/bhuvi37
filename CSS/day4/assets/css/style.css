@@ -8,28 +8,3 @@
     line-height:100px;
 }
 
-
-
-
-
-
-
-body{
-    margin:0;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background-color:lightgray;
-}
-
-.box{
-    width:200px;
-    height:200px;
-    background-color:royalblue;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:24px;
-}
