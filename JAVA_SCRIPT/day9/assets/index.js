@@ -1,14 +1,32 @@
-function getSum(n) {
+function addnumber(num1,num2) {
+    return num1 + num2;
+}
+console.log(addnumber(10,20));
 
-    let sum = 0;
 
+
+
+function printNumbers(n) {
     for (let i = 1; i <= n; i++) {
-        sum = sum + i;
+        if (i % 2 === 0) {
+            console.log(i);
+        }
     }
-
-    return sum;
 }
 
-let result = getSum(5);
+printNumbers(10);
 
-console.log(result);
+
+
+const factorial = (n) => {
+    let result = 1;
+
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+
+    return result;
+};
+
+console.log(factorial(5));
+
