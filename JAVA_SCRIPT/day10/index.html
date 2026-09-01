@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice Programs</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+
+<header>
+
+    <h1> JavaScript Practice Programs</h1>
+    <p>
+        Learn JavaScript through simple practice programs.
+        Click Run Program Live to see the output!
+    </p>
+</header>
+
+<!-- JavaScript Introduction -->
+
+<section class="js-introduction">
+
+
+<h2> JavaScript Introduction</h2>
+
+<p>
+    JavaScript is one of the most popular programming languages
+    in the world. It is mainly used to make websites interactive,
+    dynamic, and user-friendly.
+</p>
+
+<p>
+    HTML is used to create the structure of a webpage, CSS is used
+    to design and style the webpage, and JavaScript is used to add
+    functionality and interactivity.
+</p>
+
+
+<div class="language-example">
+
+    <h3> HTML + CSS + JavaScript</h3>
+
+    <p>
+        <strong>HTML:</strong> Creates the structure of a website.
+    </p>
+
+    <p>
+        <strong>CSS:</strong> Adds colors, layouts, animations,
+        and designs.
+    </p>
+
+    <p>
+        <strong>JavaScript:</strong> Adds actions and functionality
+        to the website.
+    </p>
+
+</div>
+
+
+<h2 class="main-heading"> JavaScript Basics and Main Topics</h2>
+
+
+<div class="intro-points">
+
+    <div class="intro-box">
+        <h3>1. Variables</h3>
+        <p>
+            Variables are used to store data in JavaScript.
+            The main keywords are var, let, and const.
+        </p>
+    </div>
+
+
+    <div class="intro-box">
+        <h3>2. Data Types</h3>
+        <p>
+            JavaScript supports String, Number, Boolean,
+            Undefined, Null, Object, and other data types.
+        </p>
+    </div>
+
+
+    <div class="intro-box">
+        <h3>3. Operators</h3>
+        <p>
+            Operators are used to perform mathematical,
+            comparison, and logical operations.
+        </p>
+    </div>
+
+
+    <div class="intro-box">
+        <h3>4. Conditions</h3>
+        <p>
+            if, else if, else, and switch are used
+            to make decisions in a program.
+        </p>
+    </div>
+
+
+    <div class="intro-box">
+        <h3>5. Loops</h3>
+        <p>
+            Loops are used to repeat a block of code.
+            Examples include for and while loops.
+        </p>
+    </div>
+
+
+    <div class="intro-box">
+        <h3>6. Functions</h3>
+        <p>
+            Functions are reusable blocks of code that
+            perform specific tasks.
+        </p>
+    </div>
+
+
+    <div class="intro-box">
+        <h3>7. Arrays</h3>
+        <p>
+            Arrays are used to store multiple values
+            inside a single variable.
+        </p>
+    </div>
+
+
+    <div class="intro-box">
+        <h3>8. Objects</h3>
+        <p>
+            Objects are used to store related information
+            using properties and values.
+        </p>
+    </div>
+
+
+    <div class="intro-box">
+        <h3>9. DOM</h3>
+        <p>
+            DOM allows JavaScript to access and change
+            HTML elements on a webpage.
+        </p>
+    </div>
+
+
+    <div class="intro-box">
+        <h3>10. Events</h3>
+        <p>
+            Events allow JavaScript to respond to user actions
+            such as clicking a button or typing.
+        </p>
+    </div>
+
+</div>
+
+
+<div class="js-summary">
+
+    <h2> Why Learn JavaScript?</h2>
+
+    <p>
+        JavaScript is an important language for web development.
+        It is used in websites, web applications, games,
+        interactive forms, calculators, animations, and many
+        modern applications.
+    </p>
+
+    <p>
+        By learning JavaScript basics such as variables,
+        operators, conditions, loops, functions, arrays, objects,
+        DOM, and events, you can build interactive websites
+        and start your journey toward becoming a web developer.
+    </p>
+
+</div>
+
+
+</section>
+
+
+
+</section>
+
+<main>
+
+    <!-- Program 01 -->
+    <section class="program-card">
+
+        <span class="program-number">Program 01</span>
+
+        <h2>1. Positive, Negative, or Zero</h2>
+
+        <p class="question">
+            <strong>Question:</strong>
+            Check whether a given number is positive, negative, or zero.
+        </p>
+
+        <h3>Original Source Code</h3>
+
+        <pre><code>let number = 8;
+
+
+if (number > 0) {
+console.log("Positive number");
+} else if (number < 0) {
+console.log("Negative number");
+} else {
+console.log("Zero");
+}</code></pre>
+
+
+        <button onclick="runProgram1()">Run Program Live</button>
+
+        <div class="output" id="output1">
+            Click Run Program Live to view execution logs...
+        </div>
+
+    </section>
+
+
+    <!-- Program 02 -->
+    <section class="program-card">
+
+        <span class="program-number">Program 02</span>
+
+        <h2>2. Find the Largest of Three Numbers</h2>
+
+        <p class="question">
+            <strong>Question:</strong>
+            Compare three numeric variables and identify the largest value.
+        </p>
+
+        <h3>Original Source Code</h3>
+
+        <pre><code>let a1 = 56;
+
+
+let a2 = 90;
+let a3 = 89;
+
+if (a1 >= a2 && a1 >= a3) {
+console.log(a1 + " is largest");
+} else if (a2 >= a1 && a2 >= a3) {
+console.log(a2 + " is largest");
+} else {
+console.log(a3 + " is largest");
+}</code></pre>
+
+
+        <button onclick="runProgram2()"> Run Program Live</button>
+
+        <div class="output" id="output2">
+            Click Run Program Live to view execution logs...
+        </div>
+
+    </section>
+
+
+    <!-- Program 03 -->
+    <section class="program-card">
+
+        <span class="program-number">Program 03</span>
+
+        <h2>3. Print Even Numbers</h2>
+
+        <p class="question">
+            <strong>Question:</strong>
+            Iterate through an array and print all even numbers.
+        </p>
+
+        <h3>Original Source Code</h3>
+
+        <pre><code>let numbers = [10, 15, 20, 25, 30, 35];
+
+
+for (let i = 0; i < numbers.length; i++) {
+if (numbers[i] % 2 === 0) {
+console.log(numbers[i]);
+}
+}</code></pre>
+
+
+        <button onclick="runProgram3()"> Run Program Live</button>
+
+        <div class="output" id="output3">
+            Click Run Program Live to view execution logs...
+        </div>
+
+    </section>
+
+
+    <!-- Program 04 -->
+    <section class="program-card">
+
+        <span class="program-number">Program 04</span>
+
+        <h2>4. Find the Sum of Digits</h2>
+
+        <p class="question">
+            <strong>Question:</strong>
+            Calculate the sum of all digits in a given number.
+        </p>
+
+        <h3>Original Source Code</h3>
+
+        <pre><code>let value = 12345;
+
+
+let sum = 0;
+
+let numberString = String(value);
+
+for (let i = 0; i < numberString.length; i++) {
+sum = sum + Number(numberString[i]);
+}
+
+console.log(sum);</code></pre>
+
+
+        <button onclick="runProgram4()"> Run Program Live</button>
+
+        <div class="output" id="output4">
+            Click Run Program Live to view execution logs...
+        </div>
+
+    </section>
+
+
+    <!-- Program 05 -->
+    <section class="program-card">
+
+        <span class="program-number">Program 05</span>
+
+        <h2>5. Find the Sum of Numbers in Array</h2>
+
+        <p class="question">
+            <strong>Question:</strong>
+            Iterate through an array and calculate the total sum.
+        </p>
+
+        <h3>Original Source Code</h3>
+
+        <pre><code>let num = [10, 20, 10, 30, 20, 40];
+
+
+let sum1 = 0;
+
+for (let i = 0; i < num.length; i++) {
+sum1 += num[i];
+}
+
+console.log(sum1);</code></pre>
+
+
+        <button onclick="runProgram5()"> Run Program Live</button>
+
+        <div class="output" id="output5">
+            Click Run Program Live to view execution logs...
+        </div>
+
+    </section>
+
+
+    <!-- Program 06 -->
+    <section class="program-card">
+
+        <span class="program-number">Program 06</span>
+
+        <h2>6. Find Whether a Number is Prime</h2>
+
+        <p class="question">
+            <strong>Question:</strong>
+            Determine whether a given number is prime or not.
+        </p>
+
+        <h3>Original Source Code</h3>
+
+        <pre><code>let prime = 50;
+
+
+let counter = 0;
+
+for (let i = 1; i <= prime; i++) {
+if (prime % i === 0) {
+counter++;
+}
+}
+
+if (counter === 2) {
+console.log("Prime");
+} else {
+console.log("Not a Prime");
+}</code></pre>
+
+
+        <button onclick="runProgram6()"> Run Program Live</button>
+
+        <div class="output" id="output6">
+            Click Run Program Live to view execution logs...
+        </div>
+
+    </section>
+
+
+    <!-- Program 07 -->
+    <section class="program-card">
+
+        <span class="program-number">Program 07</span>
+
+        <h2>7. Find Common Elements in Two Arrays</h2>
+
+        <p class="question">
+            <strong>Question:</strong>
+            Compare two arrays and find the matching elements.
+        </p>
+
+        <h3>Original Source Code</h3>
+
+        <pre><code>let a = [10, 20, 60, 40];
+
+
+let b = [20, 40, 50, 60];
+
+for (let i = 0; i < a.length; i++) {
+for (let j = 0; j < b.length; j++) {
+if (a[i] === b[j]) {
+console.log(a[i]);
+}
+}
+}</code></pre>
+
+
+        <button onclick="runProgram7()"> Run Program Live</button>
+
+        <div class="output" id="output7">
+            Click Run Program Live to view execution logs...
+        </div>
+
+    </section>
+
+
+    <!-- Program 08 -->
+    <section class="program-card">
+
+        <span class="program-number">Program 08</span>
+
+        <h2>8. Find How Many Times a Value Occurs</h2>
+
+        <p class="question">
+            <strong>Question:</strong>
+            Count how many times a particular value occurs in an array.
+        </p>
+
+        <h3>Original Source Code</h3>
+
+        <pre><code>let arr = [10, 20, 10, 30, 10, 40];
+
+
+let target = 10;
+let countnum = 0;
+
+for (let i = 0; i < arr.length; i++) {
+if (arr[i] === target) {
+countnum++;
+}
+}
+
+console.log(countnum);</code></pre>
+
+
+        <button onclick="runProgram8()"> Run Program Live</button>
+
+        <div class="output" id="output8">
+            Click Run Program Live to view execution logs...
+        </div>
+
+    </section>
+
+
+    <!-- Program 09 -->
+    <section class="program-card">
+
+        <span class="program-number">Program 09</span>
+
+        <h2>9. Count Vowels in String</h2>
+
+        <p class="question">
+            <strong>Question:</strong>
+            Count how many vowels are present in a string.
+        </p>
+
+        <h3>Original Source Code</h3>
+
+        <pre><code>let text = "javascript";
+
+
+let count = 0;
+
+for (let i = 0; i < text.length; i++) {
+
+
+if (
+    text[i] === "a" ||
+    text[i] === "e" ||
+    text[i] === "i" ||
+    text[i] === "o" ||
+    text[i] === "u"
+) {
+    count++;
+}
+
+
+}
+
+console.log(count);</code></pre>
+
+
+        <button onclick="runProgram9()"> Run Program Live</button>
+
+        <div class="output" id="output9">
+            Click Run Program Live to view execution logs...
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>© 2026 JavaScript Practice Programs -- Learn  Code  Practice </p>
+</footer>
+
+<script src="assets/js/index.js"></script>
+
+
+</body>
+</html>
