@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Hide Content</title>
+
+    <style>
+        #para {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        #para.show {
+            opacity: 1;
+            max-height: 100px;
+            transform: 100;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="para">Hello This paragraph can be shown and hidden.</p>
+
+    <button id="btn">Show / Hide</button>
+
+    <script>
+         let paragraph = document.getElementById("para");
+        let button = document.getElementById("btn");
+
+        button.addEventListener("click", function() {
+            paragraph.classList.toggle("show");
+        });
+    </script>
+
+</body>
+</html>
