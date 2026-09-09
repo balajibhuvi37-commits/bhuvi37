@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-2</title>
+</head>
+<body>
+    <style>
+       .box{
+          width: 100px;
+          height: 200px;
+          background-color: lightblue;
+          margin: 20px;
+          padding: 20px;
+          text-align: center;
+       }
+       .active{
+        background-color: blue;
+
+        color: white;
+       }
+    </style>
+</body>
+   
+    <div id="mybox" class="box active">
+        active box
+    </div>
+    <button onclick="removeActive()">
+        removeActive
+    </button>
+    <script>
+    function removeActive(){
+        let box= document.getElementById("mybox");
+        box.classList.remove("active");
+        
+    }
+
+    </script>
+</html>

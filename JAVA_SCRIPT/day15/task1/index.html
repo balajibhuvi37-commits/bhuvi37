@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+</head>
+<body>
+    <style>
+     .box{
+        width: 200px;
+        height: 100px;
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        
+     }
+        .active{
+             background-color: blue;
+             color: white;
+
+        }
+    </style>
+</body>
+     
+   <div id="box" class="box"> normal box</div>
+    
+     <button id="btn">Add Active</button>
+
+   <script>
+    const box=  document.getElementById("box")
+    const btn= document.getElementById("btn")
+
+    btn.addEventListener("click",function(){
+    box.classList.add("active");
+    });
+   </script>
+
+</html>
