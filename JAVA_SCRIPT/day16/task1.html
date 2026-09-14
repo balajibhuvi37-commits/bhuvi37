@@ -1,0 +1,281 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Details</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #667eea;
+        }
+
+        button {
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5369d8;
+        }
+
+        .students-section {
+            margin-top: 25px;
+        }
+
+        .students-title {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        #studentList {
+            display: grid;
+            gap: 15px;
+        }
+
+        .student-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .student-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .student-card p {
+            margin: 6px 0;
+            color: #555;
+        }
+
+        .empty-message {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #777;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Form -->
+        <div class="form-box">
+
+            <h1>Student Details</h1>
+
+            <p class="subtitle">
+                Add student information below
+            </p>
+
+            <form id="studentForm">
+
+                <div>
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter student name"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="age">Age</label>
+                    <input
+                        type="number"
+                        id="age"
+                        placeholder="Enter student age"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="city">City</label>
+                    <input
+                        type="text"
+                        id="city"
+                        placeholder="Enter student city"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Add Student
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Student List -->
+        <div class="students-section">
+
+            <h2 class="students-title">
+                Added Students
+            </h2>
+
+            <div id="studentList">
+
+                <div class="empty-message">
+                    No students added yet.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let students = [];
+
+
+
+        let form = document.getElementById("studentForm");
+
+
+
+        let studentList = document.getElementById("studentList");
+
+
+        form.addEventListener("submit", function(event) {
+
+
+            event.preventDefault();
+
+
+            // Get input values
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let city = document.getElementById("city").value;
+
+
+            // Create student object
+            let student = {
+                name: name,
+                age: age,
+                city: city
+            };
+
+
+            // Store object inside array
+            students.push(student);
+
+
+            // Clear old screen content
+            studentList.innerHTML = "";
+
+
+            // Display all students using forEach()
+            students.forEach(function(student) {
+
+                // Create div
+                let div = document.createElement("div");
+
+
+                // Add CSS class
+                div.classList.add("student-card");
+
+
+                // Add student details
+                div.innerHTML = `
+                    <h3>${student.name}</h3>
+                    <p><strong>Age:</strong> ${student.age}</p>
+                    <p><strong>City:</strong> ${student.city}</p>
+                `;
+
+
+                // Add div to screen
+                studentList.appendChild(div);
+
+            });
+
+
+            // Clear form
+            form.reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+```

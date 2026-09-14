@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register Login Dashboard</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 350px;
+            margin: 80px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        a {
+            color: blue;
+            cursor: pointer;
+        }
+
+        .dashboard {
+            width: 500px;
+            margin: 80px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .user-card {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .user-card p {
+            text-align: left;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ================= REGISTER ================= -->
+
+    <div class="container" id="registerPage">
+
+        <h1>Register</h1>
+
+        <form id="registerForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+                required
+            >
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+        <p>
+            Already have an account?
+            <a onclick="showLogin()">Login</a>
+        </p>
+
+    </div>
+
+
+
+    <!-- ================= LOGIN ================= -->
+
+    <div class="container" id="loginPage" style="display: none;">
+
+        <h1>Login</h1>
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter Password"
+                required
+            >
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+        <p>
+            Don't have an account?
+            <a onclick="showRegister()">Register</a>
+        </p>
+
+    </div>
+
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <div class="dashboard" id="dashboardPage" style="display: none;">
+
+        <h1>Dashboard</h1>
+
+        <div class="user-card">
+
+            <h2>Welcome!</h2>
+
+            <p>
+                <strong>Name:</strong>
+                <span id="displayName"></span>
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <span id="displayEmail"></span>
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                Logged In
+            </p>
+
+            <button onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // REGISTER FORM
+
+        document
+            .getElementById("registerForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                // Get values
+
+                let name =
+                    document.getElementById("name").value;
+
+                let email =
+                    document.getElementById("email").value;
+
+                let password =
+                    document.getElementById("password").value;
+
+
+                // Create object
+
+                let user = {
+
+                    name: name,
+                    email: email,
+                    password: password
+
+                };
+
+
+                // Store in LocalStorage
+
+                localStorage.setItem(
+                    "user",
+                    JSON.stringify(user)
+                );
+
+
+                alert("Registration Successful!");
+
+
+                // Show Login
+
+                showLogin();
+
+            });
+
+
+
+        // LOGIN FORM
+
+        document
+            .getElementById("loginForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                // Get login values
+
+                let email =
+                    document.getElementById("loginEmail").value;
+
+                let password =
+                    document.getElementById("loginPassword").value;
+
+
+                // Get LocalStorage data
+
+                let storedUser =
+                    localStorage.getItem("user");
+
+
+                if (storedUser) {
+
+                    // Convert string to object
+
+                    let user =
+                        JSON.parse(storedUser);
+
+
+                    // Check details
+
+                    if (
+                        email === user.email &&
+                        password === user.password
+                    ) {
+
+                        alert("Login Successful!");
+
+                        showDashboard();
+
+                    } else {
+
+                        alert("Invalid Email or Password!");
+
+                    }
+
+                } else {
+
+                    alert("Please Register First!");
+
+                }
+
+            });
+
+
+
+        // SHOW REGISTER
+
+        function showRegister() {
+
+            document.getElementById("registerPage").style.display = "block";
+
+            document.getElementById("loginPage").style.display = "none";
+
+            document.getElementById("dashboardPage").style.display = "none";
+
+        }
+
+
+
+        // SHOW LOGIN
+
+        function showLogin() {
+
+            document.getElementById("registerPage").style.display = "none";
+
+            document.getElementById("loginPage").style.display = "block";
+
+            document.getElementById("dashboardPage").style.display = "none";
+
+        }
+
+
+
+        // SHOW DASHBOARD
+
+        function showDashboard() {
+
+            let storedUser =
+                localStorage.getItem("user");
+
+
+            let user =
+                JSON.parse(storedUser);
+
+
+            // Display user data
+
+            document.getElementById("displayName").textContent =
+                user.name;
+
+            document.getElementById("displayEmail").textContent =
+                user.email;
+
+
+            // Hide other pages
+
+            document.getElementById("registerPage").style.display = "none";
+
+            document.getElementById("loginPage").style.display = "none";
+
+            document.getElementById("dashboardPage").style.display = "block";
+
+        }
+
+
+
+        // LOGOUT
+
+        function logout() {
+
+            alert("Logged out!");
+
+            showLogin();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+

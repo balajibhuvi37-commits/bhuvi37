@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Management</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        /* Student */
+        .student {
+            background-color: #e8f4ff;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        /* Employee Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #222;
+            color: white;
+        }
+
+        /* Product Cards */
+        #productContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            width: 200px;
+            padding: 20px;
+            background-color: #fff3e0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .product-card h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student, Employee & Product Details</h1>
+
+
+    <!-- ================= STUDENT ================= -->
+
+    <div class="section">
+
+        <h2>Task 1 — Student Details</h2>
+
+        <input type="text" id="studentName" placeholder="Student Name">
+
+        <input type="number" id="studentAge" placeholder="Age">
+
+        <input type="text" id="studentCity" placeholder="City">
+
+        <button onclick="addStudent()">Add Student</button>
+
+        <div id="studentContainer"></div>
+
+    </div>
+
+
+    <!-- ================= EMPLOYEE ================= -->
+
+    <div class="section">
+
+        <h2>Task 2 — Employee Details</h2>
+
+        <input type="text" id="employeeName" placeholder="Employee Name">
+
+        <input type="text" id="department" placeholder="Department">
+
+        <input type="number" id="salary" placeholder="Salary">
+
+        <button onclick="addEmployee()">Add Employee</button>
+
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+
+            <tbody id="employeeContainer">
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- ================= PRODUCT ================= -->
+
+    <div class="section">
+
+        <h2>Task 3 — Product Details</h2>
+
+        <input type="text" id="productName" placeholder="Product Name">
+
+        <input type="number" id="price" placeholder="Price">
+
+        <input type="text" id="category" placeholder="Category">
+
+        <button onclick="addProduct()">Add Product</button>
+
+        <div id="productContainer"></div>
+
+    </div>
+
+
+
+    <script>
+
+        
+        // TASK 1 — STUDENT
+        
+
+        let students = [];
+
+        function addStudent() {
+
+            // Get input values
+            let name = document.getElementById("studentName").value;
+            let age = document.getElementById("studentAge").value;
+            let city = document.getElementById("studentCity").value;
+
+
+            // Create student object
+            let student = {
+                name: name,
+                age: age,
+                city: city
+            };
+
+
+            // Store object inside array
+            students.push(student);
+
+
+            // Display students
+            let output = "";
+
+            students.forEach(function(student) {
+
+                output += `
+                    <div class="student">
+                        <strong>Name:</strong> ${student.name} <br>
+                        <strong>Age:</strong> ${student.age} <br>
+                        <strong>City:</strong> ${student.city}
+                    </div>
+                `;
+
+            });
+
+
+            document.getElementById("studentContainer").innerHTML = output;
+
+
+            // Clear inputs
+            document.getElementById("studentName").value = "";
+            document.getElementById("studentAge").value = "";
+            document.getElementById("studentCity").value = "";
+        }
+
+
+
+        // =========================================
+        // TASK 2 — EMPLOYEE
+        // =========================================
+
+        let employees = [];
+
+        function addEmployee() {
+
+            // Get input values
+            let name = document.getElementById("employeeName").value;
+            let department = document.getElementById("department").value;
+            let salary = document.getElementById("salary").value;
+
+
+            // Create employee object
+            let employee = {
+                name: name,
+                department: department,
+                salary: salary
+            };
+
+
+            // Store object inside array
+            employees.push(employee);
+
+
+            // Display employees
+            let output = "";
+
+            employees.forEach(function(employee) {
+
+                output += `
+                    <tr>
+                        <td>${employee.name}</td>
+                        <td>${employee.department}</td>
+                        <td>${employee.salary}</td>
+                    </tr>
+                `;
+
+            });
+
+
+            document.getElementById("employeeContainer").innerHTML = output;
+
+
+            // Clear inputs
+            document.getElementById("employeeName").value = "";
+            document.getElementById("department").value = "";
+            document.getElementById("salary").value = "";
+        }
+
+
+
+        // =========================================
+        // TASK 3 — PRODUCT
+        // =========================================
+
+        let products = [];
+
+        function addProduct() {
+
+            // Get input values
+            let name = document.getElementById("productName").value;
+            let price = document.getElementById("price").value;
+            let category = document.getElementById("category").value;
+
+
+            // Create product object
+            let product = {
+                name: name,
+                price: price,
+                category: category
+            };
+
+
+            // Store object inside array
+            products.push(product);
+
+
+            // Display products
+            let output = "";
+
+            products.forEach(function(product) {
+
+                output += `
+                    <div class="product-card">
+
+                        <h3>${product.name}</h3>
+
+                        <p>
+                            <strong>Price:</strong>
+                            ₹${product.price}
+                        </p>
+
+                        <p>
+                            <strong>Category:</strong>
+                            ${product.category}
+                        </p>
+
+                    </div>
+                `;
+
+            });
+
+
+            document.getElementById("productContainer").innerHTML = output;
+
+
+            // Clear inputs
+            document.getElementById("productName").value = "";
+            document.getElementById("price").value = "";
+            document.getElementById("category").value = "";
+        }
+
+    </script>
+
+</body>
+</html>
+

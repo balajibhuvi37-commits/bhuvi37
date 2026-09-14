@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PROBITE — Smart Snacks. Stronger You.</title>
+<style>
+:root{--green:#11a14f;--lime:#b9ef73;--ink:#151915;--muted:#687069;--bg:#f6f8f5;--line:#e5e9e4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}
+button,input{font:inherit}button{cursor:pointer}.container{width:min(1400px,92%);margin:auto}
+.top{background:#101510;color:#dfe9df;font-size:12px;padding:8px 4%;display:flex;justify-content:space-between}.top b{color:var(--lime)}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}.nav{height:76px;display:flex;align-items:center;gap:28px}.brand{min-width:205px}.brand strong{font-size:29px;letter-spacing:-1.7px}.brand strong span{color:var(--green)}.brand small{display:block;color:#697169;font-size:9px;letter-spacing:.4px}
+.location{font-size:12px;white-space:nowrap}.location b{display:block;font-size:13px}.search{flex:1;max-width:520px;border:1px solid #e1e5e0;background:#f5f7f4;border-radius:12px;padding:13px 16px;outline:none}.search:focus{border-color:var(--green);background:#fff}
+.links{display:flex;align-items:center;gap:20px;font-size:13px}.links a{color:#202520;text-decoration:none}.cart-open{border:0;background:#111;color:#fff;padding:12px 16px;border-radius:10px;font-weight:800}
+.hero{margin:20px auto 0;border-radius:22px;min-height:370px;overflow:hidden;position:relative;background:linear-gradient(100deg,#111611,#273126 62%,#56633f)}.hero:before{content:"";position:absolute;right:-80px;top:-120px;width:520px;height:520px;border-radius:50%;background:#b9ef7330}.hero-content{position:relative;z-index:2;padding:65px 6%;max-width:650px;color:#fff}.eyebrow{font-size:12px;color:var(--lime);font-weight:900;letter-spacing:1.5px}.hero h1{font-size:54px;line-height:1;margin:13px 0}.hero h1 span{color:var(--lime)}.hero p{font-size:16px;color:#d8ded8;line-height:1.6;max-width:530px}.shop{border:0;background:var(--lime);color:#101510;padding:14px 23px;border-radius:10px;font-weight:900;margin-top:8px}.hero-pack{position:absolute;right:6%;bottom:35px;width:440px;height:205px;border-radius:16px;background:linear-gradient(145deg,#172118,#0c110d);border:2px solid #506b48;box-shadow:0 25px 45px #0008;transform:rotate(-3deg);padding:26px;color:#fff;z-index:2}.hero-pack .pbrand{font-size:27px;font-weight:900}.hero-pack .pbrand span{color:var(--lime)}.hero-pack h2{margin:18px 0 5px;font-size:28px}.hero-pack small{color:#b8c5b6}.protein-badge{position:absolute;right:22px;top:28px;border:1px solid var(--lime);color:var(--lime);border-radius:8px;padding:8px;font-weight:900;text-align:center}.hero-nuts{position:absolute;right:40px;bottom:-18px;font-size:60px}
+.section{padding:26px 0}.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.section-head h2{font-size:23px;margin:0}.section-head button{border:0;background:none;color:var(--green);font-weight:800}
+.categories{display:flex;gap:12px;overflow:auto;padding-bottom:4px}.category{min-width:138px;border:1px solid var(--line);background:#fff;border-radius:15px;padding:14px;text-align:center;transition:.2s}.category:hover,.category.active{border-color:var(--green);transform:translateY(-2px)}.category .emoji{font-size:34px}.category p{font-size:13px;font-weight:800;margin:7px 0 0}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:9px;position:relative;transition:.2s}.card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #15201915}.photo{height:190px;border-radius:11px;overflow:hidden;background:#eef1ed;position:relative}.photo img{width:100%;height:100%;object-fit:cover}.badge{position:absolute;top:9px;left:9px;background:var(--green);color:#fff;padding:5px 7px;border-radius:5px;font-size:9px;font-weight:900}.heart{position:absolute;right:9px;top:9px;border:0;background:#fffdd;border-radius:50%;font-size:16px;width:30px;height:30px}.card h3{font-size:14px;margin:10px 4px 2px}.sub{font-size:11px;color:#7b827c;margin:0 4px 8px}.stats{display:flex;gap:5px;margin:0 4px 7px}.stats span{background:#eef8ef;color:#176d3a;border-radius:5px;padding:5px 6px;font-size:10px;font-weight:800}.rating{font-size:11px;margin:0 4px 8px}.price{font-size:17px;font-weight:900;margin:0 4px 9px}.old{font-size:11px;color:#9ba19b;text-decoration:line-through;margin-left:5px;font-weight:500}.add{width:100%;border:0;background:var(--green);color:#fff;border-radius:8px;padding:10px;font-size:12px;font-weight:900}.add:active{transform:scale(.98)}
+.benefits{background:#fff;border:1px solid var(--line);border-radius:16px;display:grid;grid-template-columns:repeat(4,1fr);padding:20px;margin:5px 0 30px}.benefit{text-align:center;border-right:1px solid var(--line)}.benefit:last-child{border:0}.benefit .icon{font-size:25px}.benefit b{display:block;font-size:12px;margin:5px}.benefit small{color:#7b827c}
+footer{background:#111711;color:#fff;padding:34px 4%;display:flex;justify-content:space-between;gap:25px}.footbrand{font-size:23px;font-weight:900}.footbrand span{color:var(--lime)}footer small{color:#aeb8ad}
+.overlay{position:fixed;inset:0;background:#0008;z-index:70;display:none}.overlay.show{display:block}.drawer{position:absolute;right:0;top:0;width:440px;height:100%;background:#fff;padding:22px;overflow:auto}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:16px}.drawer-head h2{margin:0}.close{border:0;background:#f0f2ef;border-radius:8px;padding:7px 11px}.cart-item{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}.cart-item img{width:68px;height:68px;border-radius:9px;object-fit:cover}.cart-info{flex:1}.cart-info h4{margin:0 0 4px;font-size:13px}.cart-info p{margin:0 0 7px;color:#687069;font-size:12px}.qty{display:flex;align-items:center;gap:9px}.qty button{width:25px;height:25px;border:1px solid #dce1db;background:#fff;border-radius:6px}.remove{border:0;background:none;color:#d43b3b;font-size:11px;padding:5px 0}.summary{padding-top:17px}.row{display:flex;justify-content:space-between;margin:10px 0;font-size:14px}.grand{font-size:21px;font-weight:900;border-top:1px solid var(--line);padding-top:13px}.checkout{width:100%;background:var(--green);color:#fff;border:0;border-radius:10px;padding:14px;font-weight:900;margin-top:8px}.empty{text-align:center;color:#788078;padding:50px 15px}
+.modal{position:fixed;inset:0;background:#0008;z-index:90;display:none;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modal-box{width:min(650px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:18px;padding:25px}.modal-head{display:flex;justify-content:space-between}.form{display:grid;gap:10px}.form input,.form textarea{width:100%;padding:12px;border:1px solid #dfe4df;border-radius:8px;outline:none}.pay{margin:16px 0}.pay label{display:block;border:1px solid #dfe4df;border-radius:9px;padding:11px;margin:7px 0}.place{width:100%;padding:14px;border:0;border-radius:9px;background:#111;color:#fff;font-weight:900}
+.success{text-align:center;padding:35px 10px}.success .big{font-size:65px}
+@media(max-width:1150px){.grid{grid-template-columns:repeat(4,1fr)}.links a{display:none}.hero-pack{right:3%;opacity:.75}}
+@media(max-width:850px){.location{display:none}.grid{grid-template-columns:repeat(3,1fr)}.hero-pack{display:none}.hero h1{font-size:44px}.benefits{grid-template-columns:repeat(2,1fr);gap:20px}.benefit{border:0}}
+@media(max-width:600px){.top{display:none}.nav{height:auto;flex-wrap:wrap;padding:13px 0;gap:10px}.brand{min-width:160px}.brand strong{font-size:24px}.search{order:5;flex-basis:100%;max-width:none}.grid{grid-template-columns:repeat(2,1fr);gap:9px}.photo{height:145px}.hero{min-height:330px}.hero-content{padding:48px 25px}.hero h1{font-size:37px}.drawer{width:100%}.benefits{grid-template-columns:1fr}.footer{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<div class="top"><span>🥜 High protein snacks • Less added sugar</span><b>Free delivery above ₹499</b></div>
+<header><div class="container nav">
+  <div class="brand"><strong>PRO<span>BITE</span></strong><small>SMART SNACKS. STRONGER YOU.</small></div>
+  <div class="location">📍 Deliver to <b>Chennai, Tamil Nadu</b></div>
+  <input id="search" class="search" placeholder="Search bars, nuts, cookies, drinks..." oninput="render()">
+  <div class="links"><a href="#">Home</a><a href="#categories">Categories</a><a href="#products">Shop</a><a href="#about">About</a><button class="cart-open" onclick="openCart()">🛒 Cart <span id="count">0</span></button></div>
+</div></header>
+
+<main class="container">
+<section class="hero">
+  <div class="hero-content"><div class="eyebrow">HIGH PROTEIN &nbsp; | &nbsp; LOW SUGAR &nbsp; | &nbsp; GREAT TASTE</div>
+  <h1>Fuel Your Day<br><span>Naturally.</span></h1>
+  <p>Clean, delicious snacks made for real cravings — protein-rich, thoughtfully crafted and easy to order.</p>
+  <button class="shop" onclick="document.getElementById('products').scrollIntoView()">Shop Protein Snacks →</button></div>
+  <div class="hero-pack"><div class="pbrand">PRO<span>BITE</span></div><h2>PROTEIN BAR</h2><small>Dark Chocolate Almond</small><div class="protein-badge">15g<br>PROTEIN</div><div class="hero-nuts">🥜 🍫 🥜</div></div>
+</section>
+
+<section class="section" id="categories"><div class="section-head"><h2>Shop by Category</h2><button onclick="setCat('all')">View all →</button></div>
+<div class="categories">
+<button class="category active" onclick="setCat('all')"><div class="emoji">🍱</div><p>All Snacks</p></button>
+<button class="category" onclick="setCat('bars')"><div class="emoji">🍫</div><p>Protein Bars</p></button>
+<button class="category" onclick="setCat('nuts')"><div class="emoji">🥜</div><p>Nuts & Seeds</p></button>
+<button class="category" onclick="setCat('cookies')"><div class="emoji">🍪</div><p>Cookies</p></button>
+<button class="category" onclick="setCat('drinks')"><div class="emoji">🥤</div><p>Protein Drinks</p></button>
+<button class="category" onclick="setCat('mix')"><div class="emoji">🌰</div><p>Trail Mix</p></button>
+<button class="category" onclick="setCat('butter')"><div class="emoji">🫙</div><p>Nut Butter</p></button>
+</div></section>
+
+<section class="section" id="products"><div class="section-head"><h2>Popular Products</h2><span id="result" style="font-size:13px;color:#6b746c">24 products</span></div><div class="grid" id="grid"></div></section>
+
+<section class="benefits" id="about">
+<div class="benefit"><div class="icon">🌿</div><b>Real Ingredients</b><small>Simple & thoughtful recipes</small></div>
+<div class="benefit"><div class="icon">💪</div><b>Protein Packed</b><small>Made for active days</small></div>
+<div class="benefit"><div class="icon">🍬</div><b>Less Added Sugar</b><small>Better everyday choices</small></div>
+<div class="benefit"><div class="icon">🚚</div><b>Fast Delivery</b><small>Across Chennai</small></div>
+</section>
+</main>
+
+<footer><div><div class="footbrand">PRO<span>BITE</span></div><small>Smart snacks. Stronger you.</small></div><small>© 2026 PROBITE · Privacy · Terms · Contact</small></footer>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()"><aside class="drawer">
+<div class="drawer-head"><h2>Your Cart 🛒</h2><button class="close" onclick="closeCart()">×</button></div><div id="cartItems"></div>
+<div class="summary"><div class="row"><span>Subtotal</span><b>₹<span id="subtotal">0</span></b></div><div class="row"><span>Delivery</span><b>₹<span id="delivery">0</span></b></div><div class="row grand"><span>Total</span><span>₹<span id="total">0</span></span></div><button class="checkout" onclick="checkout()">Proceed to Checkout →</button></div>
+</aside></div>
+
+<div class="modal" id="modal"><div class="modal-box" id="modalBox">
+<div class="modal-head"><h2>Checkout</h2><button class="close" onclick="closeCheckout()">×</button></div>
+<div class="form"><input id="name" placeholder="Full name"><input id="phone" placeholder="Mobile number"><input id="address" placeholder="Delivery address"><input id="city" placeholder="City / Landmark"></div>
+<div class="pay"><b>Choose payment</b><label><input type="radio" name="pay" value="UPI"> 📱 UPI</label><label><input type="radio" name="pay" value="Card"> 💳 Credit / Debit Card</label><label><input type="radio" name="pay" value="COD"> 💵 Cash on Delivery</label></div>
+<button class="place" onclick="placeOrder()">Place Order • ₹<span id="orderTotal">0</span></button>
+</div></div>
+
+<script>
+const products=[
+["Dark Chocolate Almond Protein Bar","bars",99,"15g","0g","https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=85","4.8"],
+["Roasted Almond & Cashew Mix","nuts",149,"10g","0g","https://images.unsplash.com/photo-1608797178974-15b35a6a4c9a?auto=format&fit=crop&w=800&q=85","4.7"],
+["Choco Chip Protein Cookies","cookies",119,"12g","2g","https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=85","4.6"],
+["Chocolate Protein Shake","drinks",159,"20g","0g","https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=800&q=85","4.9"],
+["Classic Protein Trail Mix","mix",139,"11g","1g","https://images.unsplash.com/photo-1603046891744-1f76eb10aec8?auto=format&fit=crop&w=800&q=85","4.7"],
+["Crunchy Peanut Butter","butter",149,"8g","0g","https://images.unsplash.com/photo-1621939514649-280e2aa9f68?auto=format&fit=crop&w=800&q=85","4.5"],
+["Honey Almond Oat Cookies","cookies",109,"10g","1g","https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=85","4.6"],
+["Fruits & Nuts Energy Bar","bars",89,"12g","1g","https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=800&q=85","4.7"],
+["Dark Chocolate Protein Bites","mix",129,"14g","0g","https://images.unsplash.com/photo-1575377427642-087cf684f39d?auto=format&fit=crop&w=800&q=85","4.8"],
+["Almond & Honey Protein Granola","mix",159,"13g","2g","https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?auto=format&fit=crop&w=800&q=85","4.6"],
+["Peanut Butter Protein Bar","bars",109,"16g","0g","https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=85","4.7"],
+["Cocoa Peanut Protein Bites","mix",119,"13g","1g","https://images.unsplash.com/photo-1548907040-4d42bfc5f5f8?auto=format&fit=crop&w=800&q=85","4.5"],
+["Vanilla Protein Drink","drinks",149,"20g","1g","https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=800&q=85","4.8"],
+["Coffee Protein Drink","drinks",169,"20g","0g","https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=85","4.8"],
+["Cashew Protein Bites","nuts",139,"12g","0g","https://images.unsplash.com/photo-1536591375667-1b4c3b7e3a1c?auto=format&fit=crop&w=800&q=85","4.6"],
+["Roasted Peanut Crunch","nuts",79,"11g","0g","https://images.unsplash.com/photo-1567892737950-30c4db37cd89?auto=format&fit=crop&w=800&q=85","4.7"],
+["Coconut Protein Cookies","cookies",129,"15g","1g","https://images.unsplash.com/photo-1598373182133-52452f7691ef?auto=format&fit=crop&w=800&q=85","4.6"],
+["Berry Protein Shake","drinks",159,"18g","1g","https://images.unsplash.com/photo-1553787499-6f4c7c1f7a1b?auto=format&fit=crop&w=800&q=85","4.7"],
+["Premium Nut & Seed Mix","nuts",169,"14g","0g","https://images.unsplash.com/photo-1599599810694-b5ac4dd8d3f1?auto=format&fit=crop&w=800&q=85","4.8"],
+["Choco Almond Granola","mix",179,"14g","2g","https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?auto=format&fit=crop&w=800&q=85","4.7"],
+["Salted Peanut Protein Bar","bars",99,"15g","0g","https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=85","4.7"],
+["Protein Coconut Bites","mix",129,"13g","1g","https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=85","4.6"],
+["Roasted Seed Crunch","nuts",99,"9g","0g","https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=800&q=85","4.7"],
+["Almond Cocoa Nut Butter","butter",179,"9g","0g","https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=85","4.8"]
+].map((p,i)=>({id:i+1,name:p[0],cat:p[1],price:p[2],protein:p[3],sugar:p[4],img:p[5],rating:p[6]}));
+let category="all",cart=[];
+function setCat(c){category=c;document.querySelectorAll(".category").forEach(x=>x.classList.remove("active"));render()}
+function render(){
+ const q=document.getElementById("search").value.toLowerCase();
+ const list=products.filter(p=>(category==="all"||p.cat===category)&&p.name.toLowerCase().includes(q));
+ document.getElementById("result").textContent=list.length+" products";
+ document.getElementById("grid").innerHTML=list.map(p=>`<article class="card"><div class="photo"><span class="badge">HIGH PROTEIN</span><button class="heart">♡</button><img src="${p.img}" alt="${p.name}" onerror="this.src='https://placehold.co/800x600/eef1ed/168a48?text=PROBITE'"></div><h3>${p.name}</h3><div class="sub">PROBITE · Smart Snack</div><div class="stats"><span>💪 ${p.protein}</span><span>🍬 ${p.sugar} sugar</span></div><div class="rating">★ ${p.rating} <span style="color:#999">(500+)</span></div><div class="price">₹${p.price}<span class="old">₹${Math.round(p.price*1.22)}</span></div><button class="add" onclick="add(${p.id})">🛒 Add to Cart</button></article>`).join("");
+}
+function add(id){let x=cart.find(i=>i.id===id);x?x.qty++:cart.push({id,qty:1});update();openCart()}
+function update(){
+ let sub=0,count=0;
+ const box=document.getElementById("cartItems");
+ if(!cart.length)box.innerHTML='<div class="empty">Your cart is empty 🥜<br><br>Add your favourite PROBITE snacks.</div>';
+ else box.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);sub+=p.price*i.qty;count+=i.qty;return `<div class="cart-item"><img src="${p.img}" onerror="this.src='https://placehold.co/100x100/eef1ed/168a48?text=PROBITE'"><div class="cart-info"><h4>${p.name}</h4><p>₹${p.price} × ${i.qty}</p><div class="qty"><button onclick="change(${p.id},-1)">−</button><b>${i.qty}</b><button onclick="change(${p.id},1)">+</button></div><button class="remove" onclick="removeItem(${p.id})">Remove</button></div></div>`}).join("");
+ document.getElementById("count").textContent=count;document.getElementById("subtotal").textContent=sub;document.getElementById("delivery").textContent=sub?(sub>=499?0:40):0;document.getElementById("total").textContent=sub+(sub>=499?0:40);document.getElementById("orderTotal").textContent=sub+(sub>=499?0:40);
+}
+function change(id,d){let x=cart.find(i=>i.id===id);x.qty+=d;if(x.qty<=0)cart=cart.filter(i=>i.id!==id);update()}
+function removeItem(id){cart=cart.filter(i=>i.id!==id);update()}
+function openCart(){document.getElementById("overlay").classList.add("show")}
+function closeCart(){document.getElementById("overlay").classList.remove("show")}
+function checkout(){if(!cart.length)return alert("Your cart is empty!");document.getElementById("modal").classList.add("show")}
+function closeCheckout(){document.getElementById("modal").classList.remove("show")}
+function placeOrder(){
+ if(!document.getElementById("name").value||!document.getElementById("phone").value||!document.getElementById("address").value||!document.querySelector('input[name="pay"]:checked'))return alert("Please fill all details and choose a payment method.");
+ document.getElementById("modalBox").innerHTML='<div class="success"><div class="big">✅</div><h2>Order Placed Successfully!</h2><p style="color:#687069;line-height:1.6">Your PROBITE snacks are being prepared.</p><p><b>Order ID: PB'+Math.floor(100000+Math.random()*900000)+'</b></p><button class="checkout" onclick="location.reload()">Continue Shopping</button></div>';cart=[];update();
+}
+render();update();
+</script>
+</body>
+</html>
