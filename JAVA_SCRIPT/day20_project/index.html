@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IT After 3 Years | Future of Technology</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050816;
+            color: white;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 8, 22, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1d2945;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00e5ff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 8%;
+            background:
+                radial-gradient(circle at 50% 40%, #10285e, transparent 45%),
+                #050816;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 10px 18px;
+            border: 1px solid #00e5ff;
+            border-radius: 30px;
+            color: #00e5ff;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: #00e5ff;
+        }
+
+        .hero p {
+            color: #aeb7ca;
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 30px;
+            background: #00e5ff;
+            color: #001018;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 25px #00e5ff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid #394866;
+        }
+
+        /* COMMON */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #9ca8bd;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            padding: 30px;
+            background: #0b1124;
+            border: 1px solid #1d2945;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+        }
+
+        .stat-card h3 {
+            font-size: 38px;
+            color: #00e5ff;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            color: #aeb7ca;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 25px 30px;
+            margin: 25px 0;
+            background: #0b1124;
+            border-left: 4px solid #00e5ff;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .timeline-item h3 {
+            color: #00e5ff;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: #aeb7ca;
+            line-height: 1.6;
+        }
+
+        /* JOB CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            padding: 30px;
+            background: linear-gradient(145deg, #0c142c, #080d1c);
+            border: 1px solid #1d2945;
+            border-radius: 20px;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #00e5ff;
+            box-shadow: 0 15px 40px rgba(0, 229, 255, 0.12);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #9ca8bd;
+            line-height: 1.6;
+        }
+
+        /* THEN VS FUTURE */
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .compare-box {
+            padding: 35px;
+            border-radius: 20px;
+            background: #0b1124;
+            border: 1px solid #1d2945;
+        }
+
+        .compare-box h3 {
+            margin-bottom: 25px;
+            font-size: 25px;
+        }
+
+        .compare-box ul {
+            list-style: none;
+        }
+
+        .compare-box li {
+            padding: 15px 0;
+            border-bottom: 1px solid #1d2945;
+            color: #c3cada;
+        }
+
+        .future h3 {
+            color: #00e5ff;
+        }
+
+        /* SKILLS */
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            padding: 25px;
+            text-align: center;
+            background: #0b1124;
+            border-radius: 18px;
+            border: 1px solid #1d2945;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: scale(1.04);
+            border-color: #00e5ff;
+        }
+
+        .skill div {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        /* AI QUESTION */
+
+        .question {
+            max-width: 850px;
+            margin: auto;
+            padding: 50px;
+            text-align: center;
+            background: linear-gradient(145deg, #101d3b, #080d1c);
+            border-radius: 25px;
+            border: 1px solid #263b64;
+        }
+
+        .question h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .question p {
+            color: #aeb7ca;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        #answer {
+            display: none;
+            margin-top: 20px;
+            color: #00e5ff;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            border-top: 1px solid #1d2945;
+            color: #7f8aa1;
+        }
+
+        footer span {
+            color: #00e5ff;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skill-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 65px 5%;
+            }
+
+            .hero {
+                min-height: 80vh;
+                padding: 50px 5%;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .stats,
+            .cards,
+            .skill-grid,
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .question {
+                padding: 30px 20px;
+            }
+
+            .question h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="logo">IT<span>2030</span></div>
+
+        <ul>
+            <li><a href="#future">Future</a></li>
+            <li><a href="#jobs">Jobs</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#question">AI Impact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="tag">THE FUTURE OF TECHNOLOGY</div>
+
+            <h1>
+                IT After <span>3 Years</span>
+            </h1>
+
+            <p>
+                AI is changing the technology industry faster than ever.
+                But will AI replace IT professionals?
+                Or will humans simply learn to work with AI?
+            </p>
+
+            <a href="#future" class="btn">
+                Explore Future →
+            </a>
+
+            <a href="#jobs" class="btn btn-outline">
+                Explore Jobs
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>The Big Change</h2>
+
+            <p>
+                Technology is moving from manual work to intelligent systems.
+            </p>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>AI</h3>
+                <p>More automation</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>24/7</h3>
+                <p>AI-powered systems</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>∞</h3>
+                <p>New opportunities</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>3Y</h3>
+                <p>Future transformation</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FUTURE -->
+
+    <section id="future">
+
+        <div class="section-title">
+
+            <h2>3-Year IT Timeline</h2>
+
+            <p>
+                How technology roles may evolve with AI.
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <h3>2026 — AI Adoption</h3>
+
+                <p>
+                    Companies are increasingly using AI tools for coding,
+                    testing, customer support and data analysis.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <h3>2027 — AI + Humans</h3>
+
+                <p>
+                    Developers and other IT professionals will increasingly
+                    use AI as a productivity partner rather than working alone.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <h3>2028 — Intelligent IT</h3>
+
+                <p>
+                    Routine tasks may become heavily automated while human
+                    skills such as architecture, problem solving and decision
+                    making become more valuable.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <h3>2029 — New IT Roles</h3>
+
+                <p>
+                    The industry may create new roles around AI systems,
+                    cybersecurity, cloud infrastructure, data and AI-assisted
+                    software development.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOBS -->
+
+    <section id="jobs">
+
+        <div class="section-title">
+
+            <h2>What Happens To IT Jobs?</h2>
+
+            <p>
+                Some tasks may disappear. Some jobs may transform.
+                New roles will also emerge.
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">💻</div>
+
+                <h3>Software Developer</h3>
+
+                <p>
+                    Developers may use AI to generate boilerplate code,
+                    debug errors and accelerate development.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">🧪</div>
+
+                <h3>Software Tester</h3>
+
+                <p>
+                    AI can automate repetitive test cases, while humans
+                    focus on complex testing and product quality.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">☁️</div>
+
+                <h3>Cloud Engineer</h3>
+
+                <p>
+                    Cloud infrastructure will continue to need people who
+                    understand deployment, security and architecture.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">🔐</div>
+
+                <h3>Cybersecurity</h3>
+
+                <p>
+                    As systems become more connected, protecting data and
+                    infrastructure becomes increasingly important.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">🤖</div>
+
+                <h3>AI Engineer</h3>
+
+                <p>
+                    AI engineers build, integrate and maintain intelligent
+                    systems used by modern companies.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">📊</div>
+
+                <h3>Data Engineer</h3>
+
+                <p>
+                    Companies need reliable data pipelines and systems to
+                    power analytics and AI applications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPARISON -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>Then vs Future</h2>
+
+            <p>
+                The role may change — but the skill still matters.
+            </p>
+
+        </div>
+
+        <div class="comparison">
+
+            <div class="compare-box">
+
+                <h3>🕒 Today</h3>
+
+                <ul>
+                    <li>Manual coding</li>
+                    <li>Manual testing</li>
+                    <li>Manual data analysis</li>
+                    <li>Traditional customer support</li>
+                    <li>Separate tools for many tasks</li>
+                </ul>
+
+            </div>
+
+            <div class="compare-box future">
+
+                <h3>🚀 Future</h3>
+
+                <ul>
+                    <li>AI-assisted coding</li>
+                    <li>AI-powered testing</li>
+                    <li>Automated data analysis</li>
+                    <li>AI + human support</li>
+                    <li>Integrated intelligent systems</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>Skills For The Future</h2>
+
+            <p>
+                Don't compete against AI. Learn how to use it.
+            </p>
+
+        </div>
+
+        <div class="skill-grid">
+
+            <div class="skill">
+                <div>🤖</div>
+                <h3>AI & ML</h3>
+            </div>
+
+            <div class="skill">
+                <div>💻</div>
+                <h3>Full Stack</h3>
+            </div>
+
+            <div class="skill">
+                <div>☁️</div>
+                <h3>Cloud</h3>
+            </div>
+
+            <div class="skill">
+                <div>🔐</div>
+                <h3>Cybersecurity</h3>
+            </div>
+
+            <div class="skill">
+                <div>📊</div>
+                <h3>Data Engineering</h3>
+            </div>
+
+            <div class="skill">
+                <div>⚙️</div>
+                <h3>DevOps</h3>
+            </div>
+
+            <div class="skill">
+                <div>🧠</div>
+                <h3>Problem Solving</h3>
+            </div>
+
+            <div class="skill">
+                <div>🗣️</div>
+                <h3>Communication</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI QUESTION -->
+
+    <section id="question">
+
+        <div class="question">
+
+            <h2>Will AI Take All IT Jobs?</h2>
+
+            <p>
+                Click the button and see the real idea behind the AI revolution.
+            </p>
+
+            <button class="btn" onclick="showAnswer()">
+                Reveal Answer
+            </button>
+
+            <div id="answer">
+
+                AI will automate many repetitive tasks.
+                But technology also creates new problems that need
+                human creativity, judgement, communication and responsibility.
+
+                <br><br>
+
+                <strong>
+                    The future may not be "AI vs Humans".
+                    It may be "Humans + AI".
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Designed for the future of <span>IT</span> 🚀
+        </p>
+
+        <p>
+            © 2026 IT After 3 Years
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function showAnswer() {
+
+            const answer = document.getElementById("answer");
+
+            if (answer.style.display === "block") {
+
+                answer.style.display = "none";
+
+            } else {
+
+                answer.style.display = "block";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
